@@ -18,8 +18,21 @@ class Api::MeetingsController < ApplicationController
       )
     @meeting.save
     render 'show.json.jbuilder'
-
   end
+
+  def update
+    #get id
+    id = params[:id]
+    @meeting = Meeting.find_by(id: id)
+    #update id
+    @meeting.title = params[:title]
+    @meeting.agenda = params[:agenda]
+    @meeting.time = params[:time]
+
+    @meeting.save
+    render 'show.json.jbuilder'
+  end
+
 
 
     
