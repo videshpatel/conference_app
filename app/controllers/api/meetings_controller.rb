@@ -32,9 +32,18 @@ class Api::MeetingsController < ApplicationController
     @meeting.save
     render 'show.json.jbuilder'
   end
+  def destroy
+    #get id
+    id = params[:id]
+    @meeting = Meeting.find_by(id: id)
+    #delete id
+    @meeting.destroy
+
+    render 'destroy.json.jbuilder'
+  end
+end
 
 
 
     
  
-end
