@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     get 'speakers/:id' => 'speakers#show'
     post 'speakers' => 'speakers#create'
     patch 'speakers/:id' => 'speakers#update'
+    delete 'speakers/:id' => 'speakers#destroy'
   end
 end
