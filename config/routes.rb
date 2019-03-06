@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     patch '/meetings/:id' => 'meetings#update'
     delete 'meetings/:id' => 'meetings#destroy'
     get 'speakers' => 'speakers#index'
+    get 'speakers/:id' => 'speakers#show'
   end
 end
