@@ -11,4 +11,22 @@ class Api::SpeakersController < ApplicationController
     render 'show.json.jbuilder'  
   end  
 
+  def create
+    @speaker = Speaker.new(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email]
+      )
+    @speaker.save
+    render 'show.json.jbuilder'
+
+    
+  end
 end
+
+      
+
+
+
+
+    
